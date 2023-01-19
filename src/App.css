@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 5rem;
+}
+
+.navbar-lists {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin-left: 1rem;
+}
+
+.navbar-list a {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.user {
+  cursor: pointer;
+}
+
+.books {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.book {
+  margin-bottom: 20px;
+}
