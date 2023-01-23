@@ -8,7 +8,7 @@ const Categories = () => {
 
   useEffect(() => {
     dispatch(checkCategory());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
