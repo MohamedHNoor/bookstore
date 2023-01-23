@@ -1,14 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit';
+const CHECKED_CATEGORY = 'categories/checkedCategory';
 
-const categoriesSlice = createSlice({
-  name: 'categories',
-  initialState: [], // initial state is an empty array
-  reducers: {
-    // reducers are functions that determine changes to the state
-    checkCategory: () => 'Under construction',
-  },
+const checkCategory = () => ({
+  type: CHECKED_CATEGORY,
 });
 
-export const { checkCategory } = categoriesSlice.actions;
+const categoryReducer = (state = [], action = {}) => {
+  switch (action.type) {
+    case CHECKED_CATEGORY:
+      return 'Under construction';
+    default:
+      return state;
+  }
+};
 
-export default categoriesSlice.reducer;
+export { checkCategory };
+
+export default categoryReducer;
