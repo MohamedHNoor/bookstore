@@ -6,7 +6,7 @@ import { removeBook } from '../redux/books/books';
 const Book = ({ title, author, id }) => {
   const dispatch = useDispatch();
 
-  const handleRemoveBook = (id) => {
+  const handleRemoveBook = () => {
     dispatch(removeBook(id));
   };
 
@@ -14,7 +14,8 @@ const Book = ({ title, author, id }) => {
     <div className="book">
       <h1>{title}</h1>
       <p>{author}</p>
-      <button type="button" onClick={() => handleRemoveBook(id)}>
+
+      <button type="button" onClick={() => handleRemoveBook()}>
         Remove
       </button>
     </div>
