@@ -1,55 +1,61 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
   const dispatch = useDispatch();
-  const [state, setState] = useState({ id: '', title: '', author: '' });
 
   const addBookToStore = (e) => {
     e.preventDefault();
-    if (state.title === '') {
+    if (!title || !author) {
       return;
     }
-    dispatch(addBook(state));
-    setState({ id: '', title: '', author: '' });
+    const book = {
+      item_id: uuidv4(),
+      title,
+      author,
+      category: 'Fiction',
+    };
+    dispatch(addBook(book));
+    setTitle('');
+    setAuthor('');
   };
 
   const handleTitleChange = (e) => {
-    setState({
-      ...state,
-      id: uuidv4(),
-      [e.target.name]: e.target.value,
-    });
+    setTitle(e.target.value);
+  };
+
+  const handleAuthorChange = (e) => {
+    setAuthor(e.target.value);
   };
 
   return (
-    <>
+    <div>
+      <h2 className="form-title">Add New Book</h2>
       <form className="form" onSubmit={addBookToStore}>
         <input
           type="text"
           name="title"
-          placeholder="Book title"
-          value={state.title}
+          value={title}
           onChange={handleTitleChange}
+          placeholder="Book Title"
         />
-        <select
-          className="form-select"
-          value={state.author}
-          onChange={handleTitleChange}
-        >
-          <option value="">Author</option>
-          <option value="option-1">Select option 1</option>
-          <option value="option-2">Select option 2</option>
-          <option value="option-3">Select option 3</option>
-        </select>
+        <input
+          type="text"
+          name="author"
+          value={author}
+          onChange={handleAuthorChange}
+          placeholder="Author Name"
+        />
         <button className="form-btn" type="submit">
           Add Book
         </button>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -1,9 +1,5 @@
 const CHECKED_CATEGORY = 'categories/checkedCategory';
 
-const checkCategory = () => ({
-  type: CHECKED_CATEGORY,
-});
-
 const categoryReducer = (state = [], action = {}) => {
   switch (action.type) {
     case CHECKED_CATEGORY:
@@ -12,6 +8,10 @@ const categoryReducer = (state = [], action = {}) => {
       return state;
   }
 };
+
+const checkCategory = () => ({
+  type: CHECKED_CATEGORY,
+});
 
 export { checkCategory };
 
