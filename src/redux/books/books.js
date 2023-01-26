@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// eslint-disable-next-line operator-linebreak
-const URL =
-  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/S93t3V7GDOMeAII9wvvv/books';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/S93t3V7GDOMeAII9wvvv/books';
 
 // actions
 const GET_BOOKS = 'GET_BOOKS';
