@@ -1,11 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/S93t3V7GDOMeAII9wvvv/books';
+// eslint-disable-next-line operator-linebreak
+const URL =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/S93t3V7GDOMeAII9wvvv/books';
 
+// actions
 const GET_BOOKS = 'GET_BOOKS';
 const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
+// reducer
 const booksReducer = (state = [], action) => {
   switch (action.type) {
     case GET_BOOKS:
@@ -19,6 +23,7 @@ const booksReducer = (state = [], action) => {
   }
 };
 
+// action creators
 export const getBooks = createAsyncThunk(
   GET_BOOKS,
   async (post, { dispatch }) => {
