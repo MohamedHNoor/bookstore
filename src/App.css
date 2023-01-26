@@ -274,6 +274,7 @@ body {
 .form-input::placeholder {
   font-size: 1rem;
   color: #444;
+  opacity: 0.5;
 }
 
 .form-btn {
