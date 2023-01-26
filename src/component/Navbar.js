@@ -4,8 +4,10 @@ import { FaUser } from 'react-icons/fa';
 
 const Navbar = () => (
   <header className="header">
-    <h1 className="header-title">Bookstore</h1>
     <nav className="navbar">
+      <a className="brand" href="#/">
+        Bookstore
+      </a>
       <ul className="navbar-lists">
         <li className="navbar-list">
           <Link to="/"> Home </Link>
@@ -13,10 +15,10 @@ const Navbar = () => (
         <li className="navbar-list">
           <Link to="/categories"> Categories </Link>
         </li>
-        <li className="user">
-          <FaUser />
-        </li>
       </ul>
+      <button type="button" className="user">
+        <FaUser />
+      </button>
     </nav>
   </header>
 );
