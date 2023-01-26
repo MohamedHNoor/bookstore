@@ -48,11 +48,16 @@ const Form = () => {
         <input
           type="text"
           name="author"
-          className="form-input"
+          className="form-input author-input"
           value={author}
           onChange={handleAuthorChange}
           placeholder="Author Name"
         />
+        <select className="category-input">
+          <option value="Category">Category</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Economy">Economy Fiction</option>
+        </select>
         <button className="form-btn" type="submit">
           Add Book
         </button>
