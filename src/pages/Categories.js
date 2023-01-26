@@ -14,10 +14,10 @@ const Categories = () => {
     <>
       <div className="categories">
         <h2>{categories}</h2>
+        <button type="button" className="btn-categries" onClick={status}>
+          Check Status
+        </button>
       </div>
-      <button type="button" onClick={status}>
-        Check Status
-      </button>
     </>
   );
 };

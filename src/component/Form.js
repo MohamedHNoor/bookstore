@@ -34,12 +34,13 @@ const Form = () => {
   };
 
   return (
-    <div>
+    <div className="form-container">
       <h2 className="form-title">Add New Book</h2>
       <form className="form" onSubmit={addBookToStore}>
         <input
           type="text"
           name="title"
+          className="form-input"
           value={title}
           onChange={handleTitleChange}
           placeholder="Book Title"
@@ -47,10 +48,16 @@ const Form = () => {
         <input
           type="text"
           name="author"
+          className="form-input author-input"
           value={author}
           onChange={handleAuthorChange}
           placeholder="Author Name"
         />
+        <select className="category-input">
+          <option value="Category">Category</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Economy">Economy Fiction</option>
+        </select>
         <button className="form-btn" type="submit">
           Add Book
         </button>
